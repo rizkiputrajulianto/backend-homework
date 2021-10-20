@@ -5,7 +5,7 @@ var logger = require('morgan');
 const routes = require("./src/routes")
 const {sequelize, Sequelize} = require("./src/models");
 
-sequelize.sync({force : true});
+// sequelize.sync({force : true});
 
 var app = express();
 
