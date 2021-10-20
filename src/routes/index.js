@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const routesClass = require("../controllers/class/routes");
+const routesUsers = require("../controllers/users/routes");
 
 
 router.use("/class", routesClass);
+router.use("/user", routesUsers);
 
 
 module.exports = router;
