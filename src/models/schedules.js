@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     classesId: DataTypes.INTEGER,
     name: DataTypes.STRING,
     code:{type: DataTypes.STRING(6), unique:true},
-    start: DataTypes.DATEONLY,
-    end: DataTypes.DATEONLY
+    start: DataTypes.DATE,
+    end: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Schedules',
