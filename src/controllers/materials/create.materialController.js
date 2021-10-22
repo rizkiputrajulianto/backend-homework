@@ -1,5 +1,4 @@
-const {Materials} = require("../../models");
-const {Schedules} = require("../../models");
+const {Schedules, Materials} = require("../../models");
 const crypto = require('crypto');
 
 const service = async function(req, res, next) {

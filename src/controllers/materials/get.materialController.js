@@ -1,5 +1,5 @@
-const {Schedules} = require("../../models");
-const {Materials} = require("../../models");
+const {Schedules, Materials} = require("../../models");
+
 
 const service = async function(req, res, next) {
     try {
