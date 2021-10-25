@@ -6,17 +6,17 @@ const service = async function(req, res, next) {
         if (req.params.id) {
             where.id = req.params.id
         };
-        const requestDB = await Schedules.findAll({where});
-        const requestDBrel = await Classes.findAll();
-        for (let i = 0; i < requestDB.length; i++) {
-            for (let j = 0; j < requestDBrel.length; j++) {
-                if (requestDB[i].classesId == requestDBrel[j].id) {
-                    requestDB[i].classesId = requestDBrel[j]
-                }
+        const requestDB = await Schedules.findAll({where, include:{model:Classes, as:"classes"}});
+        // const requestDBrel = await Classes.findAll();
+        // for (let i = 0; i < requestDB.length; i++) {
+        //     for (let j = 0; j < requestDBrel.length; j++) {
+        //         if (requestDB[i].classesId == requestDBrel[j].id) {
+        //             requestDB[i].classesId = requestDBrel[j]
+        //         }
                 
-            }
+        //     }
             
-        }
+        // }
 
         if (!req.params.id) {
         return res.json(requestDB);
